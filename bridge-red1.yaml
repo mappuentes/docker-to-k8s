@@ -1,0 +1,18 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  name: bridge-red1
+spec:
+  config: |
+    {
+      "cniVersion": "0.3.1",
+      "name": "red1",
+      "type": "bridge",
+      "bridge": "bridge-red1",
+      "ipam": {
+        "type": "host-local",
+        "subnet": "10.0.1.0/24",
+        "rangeStart": "10.0.1.20",
+        "rangeEnd": "10.0.1.100"
+      }
+    }

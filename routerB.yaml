@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: router-b
+  annotations:
+     k8s.v1.cni.cncf.io/networks: default/bridge-rb-rc, default/bridge-rb-rd, default/bridge-rb-ra
+
+spec:
+  containers:
+  - name: router-b
+    image: miguelliceon/docker-to-k8s:routerB
+    command: ["/entrypoints/ep_routerB.sh", "/bin/sleep", "infinity"]
+    securityContext:
+      privileged: true
+      capabilities:
+        add:
+          - NET_ADMIN
+  imagePullSecrets:
+  - name: dockerhub-secret

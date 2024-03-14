@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server-red2
+  annotations:
+    k8s.v1.cni.cncf.io/networks: default/bridge-red2
+spec:
+  containers:
+  - name: server-red2
+    image: miguelliceon/docker-to-k8s:client
+    command: ["/entrypoints/ep_red2.sh","/bin/sleep", "infinity"]
+    securityContext:
+      privileged: true
+      capabilities:
+        add:
+          - NET_ADMIN
+  imagePullSecrets:
+  - name: dockerhub-secret
+  

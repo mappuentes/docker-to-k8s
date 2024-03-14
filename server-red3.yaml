@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server-red3
+  annotations:
+    k8s.v1.cni.cncf.io/networks: default/bridge-red3
+spec:
+  containers:
+  - name: server-red3
+    image: miguelliceon/docker-to-k8s:client
+    command: ["/entrypoints/ep_red3.sh","/bin/sleep", "infinity"]
+    securityContext:
+      privileged: true
+      capabilities:
+        add:
+          - NET_ADMIN
+  imagePullSecrets:
+  - name: dockerhub-secret
+  

@@ -1,0 +1,69 @@
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: bridge-rb-rc
+spec:
+  config: |
+    {
+      "cniVersion": "0.3.1",
+      "name": "red-rc-rb",
+      "type": "bridge",
+      "bridge": "bridge-rc-rb",
+      "ipam": {
+        "type": "static",
+        "addresses": [
+          {
+            "address": "10.2.0.10/24"
+          }
+        ]
+      }
+    }
+
+
+---
+
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: bridge-rb-rd
+spec:
+  config: |
+    {
+      "cniVersion": "0.3.1",
+      "name": "red-rd-rb",
+      "type": "bridge",
+      "bridge": "bridge-rd-rb",
+      "ipam": {
+        "type": "static",
+        "addresses": [
+          {
+            "address": "10.3.0.10/24"
+          }
+        ]
+      }
+    }
+
+
+---
+
+
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: bridge-rb-ra
+spec:
+  config: |
+    {
+      "cniVersion": "0.3.1",
+      "name": "red-ra-rb",
+      "type": "bridge",
+      "bridge": "bridge-ra-rb",
+      "ipam": {
+        "type": "static",
+        "addresses": [
+          {
+            "address": "10.1.0.20/24"
+          }
+        ]
+      }
+    }
