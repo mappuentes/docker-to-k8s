@@ -4,15 +4,26 @@ metadata:
   name: servidor
   annotations:
     k8s.v1.cni.cncf.io/networks: default/bridge-servidor
+  labels:
+    app: mi-aplicacion
 spec:
   containers:
   - name: servidor
     image: miguelliceon/docker-to-k8s:servidor
-    command: ["/entrypoints/ep_servidor.sh","/bin/sleep", "infinity"]
+    command: ["/entrypoints/ep_servidor.sh", "/bin/sleep", "infinity"]
     securityContext:
       privileged: true
       capabilities:
         add:
           - NET_ADMIN
+    ports:
+    - containerPort: 3001
+    volumeMounts:
+    - name: fluentd-shared-volume
+      mountPath: /shared-volume
+  volumes:
+  - name: fluentd-shared-volume
+    hostPath:
+      path: "/professor-fluentd/shared-volume"
   imagePullSecrets:
   - name: dockerhub-secret

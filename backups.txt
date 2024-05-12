@@ -24,7 +24,7 @@ spec:
   
   
   
-  
+  "/entrypoints/ep_fluentd",
   
   
   
@@ -88,3 +88,76 @@ spec:
 			}
 		],
   }'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"/etc/adduser.conf"
+C:/Users/Siner/Desktop/docker_AGR-main/newEnvironment/professor-fluentd/conf/fluent.conf
+
+
+
+
+
+
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fluentd
+  annotations:
+    k8s.v1.cni.cncf.io/networks: default/bridge-fluentd
+  labels:
+    app: mi-aplicacion
+spec:
+  containers:
+  - name: fluentd
+    image: miguelliceon/docker-to-k8s:fluentd
+    command: ["/bin/sleep", "infinity"]
+    securityContext:
+      privileged: true
+      capabilities:
+        add:
+          - NET_ADMIN
+    ports:
+    - containerPort: 24224
+      protocol: TCP
+    - containerPort: 24224
+      protocol: UDP
+    - containerPort: 5140
+      protocol: TCP
+    volumeMounts:
+    - name: fluentd-conf-volume
+      mountPath: /fluentd/etc/fluent.conf
+    - name: shared-volume
+      mountPath: /shared-volume
+    - name: fluentd-output
+      mountPath: /fluentd/output/
+  volumes:
+  - name: fluentd-conf-volume
+    hostPath:
+      path: "C:/Users/Siner/Desktop/docker_AGR-main/newEnvironment/professor-fluentd/conf/fluent.conf"
+  - name: shared-volume
+    hostPath:
+      path: "C:/Users/Siner/Desktop/docker_AGR-main/newEnvironment/professor-fluentd/shared-volume"
+  - name: fluentd-output
+    hostPath:
+      path: "C:/Users/Siner/Desktop/docker_AGR-main/newEnvironment/professor-fluentd/output"
+  imagePullSecrets:
+  - name: dockerhub-secret
