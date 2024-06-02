@@ -7,8 +7,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-ra-rb",
-      "type": "bridge",
-      "bridge": "bridge-ra-rb",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -18,6 +19,7 @@ spec:
         ]
       }
     }
+
 
 
 ---   
@@ -32,8 +34,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-servidor",
-      "type": "bridge",
-      "bridge": "bridge-servidor",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -43,6 +46,7 @@ spec:
         ]
       }
     }
+
 
 
 ---
@@ -58,8 +62,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-servidor",
-      "type": "bridge",
-      "bridge": "bridge-servidor",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -81,8 +86,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "fluentd",
-      "type": "bridge",
-      "bridge": "bridge-fluentd",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [

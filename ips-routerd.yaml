@@ -7,8 +7,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red3",
-      "type": "bridge",
-      "bridge": "bridge-red3",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -31,8 +32,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red4",
-      "type": "bridge",
-      "bridge": "bridge-red4",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -42,6 +44,7 @@ spec:
         ]
       }
     }
+
 
 
 
@@ -56,8 +59,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-rd-rb",
-      "type": "bridge",
-      "bridge": "bridge-rd-rb",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
