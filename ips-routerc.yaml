@@ -7,8 +7,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red1",
-      "type": "bridge",
-      "bridge": "bridge-red1",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -18,10 +19,7 @@ spec:
         ]
       }
     }
-  
-
 ---
-
 apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
@@ -31,8 +29,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red2",
-      "type": "bridge",
-      "bridge": "bridge-red2",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -43,10 +42,7 @@ spec:
       }
     }
 
-
-
 ---
-
 apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
@@ -56,8 +52,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-rc-rb",
-      "type": "bridge",
-      "bridge": "bridge-rc-rb",
+      "type": "ipvlan",
+      "master": "enp1s0",
+      "mode": "l2",
       "ipam": {
         "type": "static",
         "addresses": [
