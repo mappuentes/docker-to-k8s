@@ -9,7 +9,7 @@ spec:
       "name": "red1",
       "type": "ipvlan",
       "master": "enp2s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "host-local",
         "subnet": "10.0.1.0/24",

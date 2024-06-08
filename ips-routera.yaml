@@ -9,7 +9,7 @@ spec:
       "name": "red-ra-rb",
       "type": "ipvlan",
       "master": "enp8s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -36,7 +36,7 @@ spec:
       "name": "red-servidor",
       "type": "ipvlan",
       "master": "enp9s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -64,7 +64,7 @@ spec:
       "name": "red-servidor",
       "type": "ipvlan",
       "master": "enp9s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -88,7 +88,7 @@ spec:
       "name": "fluentd",
       "type": "ipvlan",
       "master": "enp1s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "static",
         "addresses": [

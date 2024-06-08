@@ -9,7 +9,7 @@ spec:
       "name": "red-rc-rb",
       "type": "ipvlan",
       "master": "enp6s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -34,7 +34,7 @@ spec:
       "name": "red-rd-rb",
       "type": "ipvlan",
       "master": "enp7s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "static",
         "addresses": [
@@ -60,7 +60,7 @@ spec:
       "name": "red-ra-rb",
       "type": "ipvlan",
       "master": "enp8s0",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
         "type": "static",
         "addresses": [
