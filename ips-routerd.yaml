@@ -60,7 +60,7 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red-rd-rb",
       "type": "ipvlan",
-      "master": "enp7s0",
+      "master": "enp3s0",
       "mode": "l3",
       "ipam": {
         "type": "static",

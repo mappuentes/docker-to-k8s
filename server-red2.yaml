@@ -16,4 +16,6 @@ spec:
           - NET_ADMIN
   imagePullSecrets:
   - name: dockerhub-secret
+  nodeSelector:
+    on-worker1: "true"
   

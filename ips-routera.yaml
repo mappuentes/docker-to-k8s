@@ -8,7 +8,7 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red-ra-rb",
       "type": "ipvlan",
-      "master": "enp8s0",
+      "master": "enp2s0",
       "mode": "l3",
       "ipam": {
         "type": "static",
@@ -35,7 +35,7 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red-servidor",
       "type": "ipvlan",
-      "master": "enp9s0",
+      "master": "enp6s0",
       "mode": "l3",
       "ipam": {
         "type": "static",
@@ -63,7 +63,7 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red-servidor",
       "type": "ipvlan",
-      "master": "enp9s0",
+      "master": "enp6s0",
       "mode": "l3",
       "ipam": {
         "type": "static",
@@ -76,25 +76,4 @@ spec:
     }
 
 
----
-apiVersion: "k8s.cni.cncf.io/v1"
-kind: NetworkAttachmentDefinition
-metadata:
-  name: bridge-fluentd-ra
-spec:
-  config: |
-    {
-      "cniVersion": "0.3.1",
-      "name": "fluentd",
-      "type": "ipvlan",
-      "master": "enp1s0",
-      "mode": "l3",
-      "ipam": {
-        "type": "static",
-        "addresses": [
-          {
-            "address": "10.200.0.10/24"
-          }
-        ]
-      }
-    }
+
