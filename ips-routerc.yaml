@@ -8,18 +8,18 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red1",
       "type": "ipvlan",
-      "master": "enp5s0",
+      "master": "enp1s0",
       "mode": "l2",
       "ipam": {
-        "type": "static",
-        "addresses": [
-          {
-            "address": "10.0.1.10/24"
-          }
-        ]
+        "type": "whereabouts",
+        "range": "10.0.1.0/24",
+        "range_start": "10.0.1.10",
+        "range_end": "10.0.1.10"
       }
     }
+
 ---
+
 apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
@@ -30,19 +30,18 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red2",
       "type": "ipvlan",
-      "master": "enp6s0",
+      "master": "enp1s0",
       "mode": "l3",
       "ipam": {
-        "type": "static",
-        "addresses": [
-          {
-            "address": "10.0.2.10/24"
-          }
-        ]
+        "type": "whereabouts",
+        "range": "10.0.2.0/24",
+        "range_start": "10.0.2.10",
+        "range_end": "10.0.2.10"
       }
     }
 
 ---
+
 apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
@@ -53,14 +52,13 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red-rc-rb",
       "type": "ipvlan",
-      "master": "enp4s0",
+      "master": "enp1s0",
       "mode": "l3",
       "ipam": {
-        "type": "static",
-        "addresses": [
-          {
-            "address": "10.2.0.20/24"
-          }
-        ]
+        "type": "whereabouts",
+        "range": "10.2.0.0/24",
+        "range_start": "10.2.0.20",
+        "range_end": "10.2.0.20"
       }
     }
+---

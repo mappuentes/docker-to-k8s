@@ -8,12 +8,12 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red4",
       "type": "ipvlan",
-      "master": "enp5s0",
+      "master": "enp1s0",
       "mode": "l3",
       "ipam": {
-        "type": "host-local",
-        "subnet": "10.0.4.0/24",
-        "rangeStart": "10.0.4.20",
-        "rangeEnd": "10.0.4.100"
+        "type": "whereabouts",
+        "range": "10.0.4.0/24",
+        "range_start": "10.0.4.20",
+        "range_end": "10.0.4.100"
       }
     }
