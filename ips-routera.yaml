@@ -7,9 +7,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-ra-rb",
-      "type": "ipvlan",
+      "type": "macvlan",
       "master": "enp1s0",
-      "mode": "l2",
+      "mode": "bridge",
       "ipam": {
         "type": "whereabouts",
         "range": "10.1.0.0/24",
@@ -29,9 +29,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-servidor-ra",
-      "type": "ipvlan",
+      "type": "macvlan",
       "master": "enp1s0",
-      "mode": "l2",
+      "mode": "bridge",
       "ipam": {
         "type": "whereabouts",
         "range": "10.100.0.0/24",
@@ -53,9 +53,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red-servidor",
-      "type": "ipvlan",
+      "type": "macvlan",
       "master": "enp1s0",
-      "mode": "l2",
+      "mode": "bridge",
       "ipam": {
         "type": "whereabouts",
         "range": "10.100.0.0/24",

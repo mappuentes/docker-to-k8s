@@ -7,9 +7,9 @@ spec:
     {
       "cniVersion": "0.3.1",
       "name": "red4",
-      "type": "ipvlan",
+      "type": "macvlan",
       "master": "enp1s0",
-      "mode": "l2",
+      "mode": "bridge",
       "ipam": {
         "type": "whereabouts",
         "range": "10.0.4.0/24",
