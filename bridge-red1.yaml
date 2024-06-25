@@ -9,7 +9,7 @@ spec:
       "name": "red1",
       "type": "ipvlan",
       "master": "enp1s0",
-      "mode": "l3",
+      "mode": "l2",
       "ipam": {
         "type": "whereabouts",
         "range": "10.0.1.0/24",

@@ -9,7 +9,7 @@ spec:
       "name": "red-ra-rb",
       "type": "ipvlan",
       "master": "enp1s0",
-      "mode": "l3",
+      "mode": "l2",
       "ipam": {
         "type": "whereabouts",
         "range": "10.1.0.0/24",
@@ -31,7 +31,7 @@ spec:
       "name": "red-servidor-ra",
       "type": "ipvlan",
       "master": "enp1s0",
-      "mode": "l3",
+      "mode": "l2",
       "ipam": {
         "type": "whereabouts",
         "range": "10.100.0.0/24",
@@ -55,7 +55,7 @@ spec:
       "name": "red-servidor",
       "type": "ipvlan",
       "master": "enp1s0",
-      "mode": "l3",
+      "mode": "l2",
       "ipam": {
         "type": "whereabouts",
         "range": "10.100.0.0/24",
