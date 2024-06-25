@@ -8,13 +8,14 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red1",
       "type": "ipvlan",
-      "master": "cni0",
+      "master": "enp1s0",
       "mode": "l2",
       "ipam": {
         "type": "whereabouts",
         "range": "10.0.1.0/24",
         "range_start": "10.0.1.20",
-        "range_end": "10.0.1.100"
+        "range_end": "10.0.1.100",
+        "gateway": "10.0.1.10"
       }
     }
 
