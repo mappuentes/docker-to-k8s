@@ -75,8 +75,8 @@ spec:
         ports:
         - containerPort: 8080
           protocol: TCP
-        imagePullSecrets:
-          - name: dockerhub-secret
+      imagePullSecrets:
+        - name: dockerhub-secret
     serviceChannels:
     - advancedChannelSettings:
         minBandwidth: "5"
