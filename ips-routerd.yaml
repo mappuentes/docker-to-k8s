@@ -8,7 +8,7 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red3",
       "type": "macvlan",
-      "master": "enp1s0",
+      "master": "eth0",
       "mode": "bridge",
       "ipam": {
         "type": "whereabouts",
@@ -30,7 +30,7 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red4",
       "type": "macvlan",
-      "master": "enp1s0",
+      "master": "eth0",
       "mode": "bridge",
       "ipam": {
         "type": "whereabouts",
@@ -52,7 +52,7 @@ spec:
       "cniVersion": "0.3.1",
       "name": "red-rd-rb",
       "type": "macvlan",
-      "master": "enp1s0",
+      "master": "eth0",
       "mode": "bridge",
       "ipam": {
         "type": "whereabouts",
