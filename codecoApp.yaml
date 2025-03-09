@@ -1,5 +1,3 @@
-# Copyright (c) 2024 Red Hat, Inc
-# 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -21,14 +19,14 @@ apiVersion: codeco.he-codeco.eu/v1alpha1
 kind: CodecoApp
 metadata:
   generation: 1
-  name: codecoappnetworktopology
+  name: codecoappinstance3
   namespace: he-codeco-acm
-  resourceVersion: "1457"
-  uid: 5c948d7e-43d6-425b-b0b2-76402b606e08
+  resourceVersion: "1456"
+  uid: 5c948d7e-43d6-425b-b0b2-76402b606e07
 spec:
   appEnergyLimit: "20"
   appFailureTolerance: ""
-  appName: Topology-net
+  appName: acm-swm-app
   codecoapp-msspec:
   - nwbandwidth: "1.2"
     nwlatency: "3"
@@ -54,12 +52,12 @@ spec:
         frameSize: "100"
         maxDelay: "1"
         sendInterval: "10"
-      channelName: dummy-1
+      channelName: frontend
       otherService:
-        appName: Topology-net
+        appName: acm-swm-app
         port: 9090
-        serviceName: dummy-1
-    serviceName: dummy-2
+        serviceName: front-end
+    serviceName: backend
   - nwbandwidth: "1.2"
     nwlatency: "3"
     podspec:
@@ -83,12 +81,12 @@ spec:
         frameSize: "100"
         maxDelay: "1"
         sendInterval: "10"
-      channelName: dummy-2
+      channelName: backend
       otherService:
-        appName: Topology-net
+        appName: acm-swm-app
         port: 8080
-        serviceName: dummy-2
-    serviceName: dummy-1
+        serviceName: backend
+    serviceName: front-end
   complianceClass: High
   qosClass: Gold
   securityClass: Good
