@@ -28,71 +28,42 @@ metadata:
 spec:
   appEnergyLimit: "20"
   appFailureTolerance: ""
-  appName: acm-swm-app
+  appName: topologia-red
   codecoapp-msspec:
   - nwbandwidth: "1.2"
     nwlatency: "3"
     podspec:
       containers:
       - image: miguelliceon/docker-to-k8s:routerC
-        name: skupper-backend
+        name: router-c
         command: ["/entrypoints/ep_routerC.sh", "/bin/sleep", "infinity"]
         securityContext:
           privileged: true
           capabilities:
             add:
               - NET_ADMIN
-        ports:
-        - containerPort: 8080
-          name: skupper-backend
-          protocol: TCP
         resources:
           limits:
-            cpu: "2"
-            memory: 4Gi
+            cpu: "1"
+            memory: 1Gi
       imagePullSecrets:
           - name: dockerhub-secret
-    serviceChannels:
-    - advancedChannelSettings:
-        minBandwidth: "5"
-        frameSize: "100"
-        maxDelay: "1"
-        sendInterval: "10"
-      channelName: frontend
-      otherService:
-        appName: acm-swm-app
-        port: 9090
-        serviceName: front-end
-    serviceName: backend
+    serviceName: router-c
   - nwbandwidth: "1.2"
     nwlatency: "3"
     podspec:
       containers:
       - image: miguelliceon/docker-to-k8s:client
-        name: front-end
+        name: servidor-red1
         command: ["/entrypoints/ep_red1.sh", "/bin/sleep", "infinity"]
         securityContext:
           privileged: true
           capabilities:
             add:
               - NET_ADMIN
-        ports:
-        - containerPort: 8080
-          protocol: TCP
       imagePullSecrets:
         - name: dockerhub-secret
-    serviceChannels:
-    - advancedChannelSettings:
-        minBandwidth: "5"
-        frameSize: "100"
-        maxDelay: "1"
-        sendInterval: "10"
-      channelName: backend
-      otherService:
-        appName: acm-swm-app
-        port: 8080
-        serviceName: backend
-    serviceName: front-end
-  complianceClass: High
-  qosClass: Gold
-  securityClass: Good
+    serviceName: servidor-red1
+  complianceClass: Medium
+  qosClass: BestEffort
+  securityClass: Medium
