@@ -30,10 +30,6 @@ spec:
   - nwbandwidth: "1.2"
     nwlatency: "3"
     podspec:
-      metadata:
-        name: router-c
-        annotations:
-          k8s.v1.cni.cncf.io/networks: default/bridge-red1-rc, default/bridge-red2-rc, default/bridge-rc-rb
       containers:
       - image: miguelliceon/docker-to-k8s:routerC
         name: router-c
